@@ -10,7 +10,7 @@
 
 > **Nome:** Vinicius Mendes Reis
 > 
-> **Professor:** Sirlei Couto
+> **Professor:** Sirlei Coutinho
 > 
 > **Escola:** E.E Maria Cardoso Castilho
 > 
