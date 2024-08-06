@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="Icone.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>MediaFlix</title>
+    <style>
+        body {
+            font-family: 'Chakra Petch', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            font-size: 24px;
+            margin-bottom: 20px;
+            position: relative; /* Adicionado para posicionar o cursor */
+            overflow: hidden; /* Para esconder o overflow do cursor */
+        }
+
+        .typed-text {
+            display: inline-block;
+            position: relative;
+            width: auto;
+        }
+
+        .typed-cursor {
+            display: inline-block;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .typed-text span {
+            animation: type-animation 3s steps(15, end), blink-caret 0.5s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid #fff;
+            font-size: 32px;
+        }
+
+        @keyframes type-animation {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="typed-text">
+            <span class="typed-cursor"></span>
+        </div>
+    </header>
+
+    <section class="chamada">
+        <div class="chamada-texto">
+            <h1>ATRAVÉS DO ARANHAVERSO</h1>
+            <p>#homem-aranha</p>
+        </div>
+
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+	
+	<br>
+		<br>
+			<br>
+    <section class="categoria">
+        <h2>Veja outras opções para você assistir abaixo.</h2>
+        <div class="categoria-videos">
+            <a href="https://www.youtube.com/watch?v=cs15QqG6Gjc">
+                <img src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=nCmIwcycUJ8">
+                <img src="https://img.youtube.com/vi/nCmIwcycUJ8/maxresdefault.jpg" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=FvRmEapoHRc">
+                <img src="https://img.youtube.com/vi/FvRmEapoHRc/maxresdefault.jpg" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=Ipkw_hWW-Hw">
+                <img src="https://img.youtube.com/vi/Ipkw_hWW-Hw/maxresdefault.jpg" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=d4DzMNGoyis">
+                <img src="https://img.youtube.com/vi/d4DzMNGoyis/maxresdefault.jpg" />
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript para animar o título
+        const typedTextSpan = document.querySelector('.typed-text');
+        const cursorSpan = document.querySelector('.typed-cursor');
+
+        const textArray = ["MediaFlix", "Filmes e Séries", "Assista Agora"];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 2000; // Delay entre escrever e apagar o texto
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                cursorSpan.classList.remove('typing');
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                cursorSpan.classList.remove('typing');
+                textArrayIndex = (textArrayIndex + 1) % textArray.length;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+    </script>
+
+</body>
+
+</html>
