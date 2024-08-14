@@ -1,17 +1,16 @@
-<h1 align="center">• Projeto MediaFlix •</h1>
+<h1 align="center">
+  <br>
+  <img src="https://i.imgur.com/OQJbaVJ.png" alt="Icone" width="200">
+  <br>
+  Projeto - MidiaFlix
+  <br>
+</h1>
 
-<p align="center">Projeto de criação e programação de um website de mídia para a Escola Maria Cardoso Castilho.</p>
+<p align="center">Um projeto de criação e programação de um website de mídia para a E.E Escola Maria Cardoso Castilho.</p>
 
 <br>
 <br>
-<br>
 
-<h1 align="center">• INFORMAÇÕES •</h1>
-
-> **Nome:** Vinicius Mendes Reis
-> 
-> **Professor:** Sirlei Coutinho
-> 
-> **Escola:** E.E Maria Cardoso Castilho
+> **Participantes:** Vinicius Mendes
 > 
 > **Créditos:** Eu mesmo e só um pouquinho do ChatGPT
